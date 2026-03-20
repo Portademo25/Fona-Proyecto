@@ -1,0 +1,45 @@
+<section class="hero-premium">
+  <div class="hero-content">
+    <div class="welcome-badge">Institución Adscrita al MPPIJP</div>
+    <h1>Plataforma <span class="highlight">FONA</span></h1>
+    <p>Gestión integral de recaudación y prevención para el bienestar social.</p>
+
+    <div class="search-container">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="¿Qué departamento buscas? (ej. RRHH, Fiscalización...)"
+          [ngModel]="searchQuery()"
+          (ngModelChange)="searchQuery.set($event)">
+        <button class="search-btn">Buscar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container-main">
+  <div class="section-header">
+    <h2>Nuestras Oficinas y Direcciones</h2>
+    <p>Selecciona un área para acceder a sus servicios internos</p>
+  </div>
+
+  <div class="dept-grid">
+  @for (dept of departamentosFiltrados(); track dept.nombre) {
+    <div class="dept-card">
+      <div class="card-bg-glow"></div>
+      <div class="dept-icon-wrapper">
+        <span class="icon">{{ dept.icono }}</span>
+      </div>
+      <div class="dept-info">
+        <h3>{{ dept.nombre }}</h3>
+        <p>{{ dept.descripcion }}</p>
+      </div>
+
+     <button class="btn-access" (click)="navegar(dept.ruta)">
+  Ingresar
+</button>
+    </div>
+  }
+</div>
+</div>

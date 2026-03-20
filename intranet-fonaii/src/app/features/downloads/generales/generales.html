@@ -1,0 +1,43 @@
+<div class="page-container">
+  <div class="breadcrumb">
+    <a routerLink="/mis-descargas">Centro de Documentación</a> / <span>Formatos Generales</span>
+  </div>
+
+  <div class="header-section">
+    <div class="title-group">
+      <h1>📁 Formatos Generales</h1>
+      <p>Documentos institucionales y planillas de uso administrativo común.</p>
+    </div>
+    <button class="btn-back" routerLink="/mis-descargas">Volver al Panel</button>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="general-table">
+      <thead>
+        <tr>
+          <th>Nombre del Documento</th>
+          <th>Peso</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of formats; track item.id) {
+          <tr>
+            <td>
+              <div class="doc-cell">
+                <span class="file-icon">📋</span>
+                <span class="doc-title">{{ item.title }}</span>
+              </div>
+            </td>
+            <td>{{ item.size }}</td>
+            <td>
+              <button class="btn-download" (click)="downloadGeneral(item)">
+                Descargar
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

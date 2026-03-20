@@ -1,0 +1,67 @@
+<nav class="nav-container">
+  <div class="nav-content">
+
+    <div class="logo" routerLink="/home" style="cursor: pointer;">
+      <img src="assets/img/logo_fona.png" class="logo-img-fona" alt="Logo FONA">
+      <div class="logo-text-group">
+        <span class="logo-text">FONA</span>
+        <span class="logo-subtext">Intranet Institucional</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      @for (link of navLinks; track link.route) {
+        @if (!link.requiereLogin || (isLogged$ | async)) {
+          <li>
+            <a [routerLink]="link.route" routerLinkActive="active">{{ link.label }}</a>
+          </li>
+        }
+      }
+    </ul>
+
+    <div class="user-actions">
+      <img src="assets/img/logo_ministerio.png" class="logo-min-nav" alt="MPPRIJP">
+
+      @if (!(isLogged$ | async)) {
+        <a routerLink="/login" class="btn-login-link">Iniciar Sesión</a>
+      }
+
+      @if (isLogged$ | async) {
+        <div class="user-profile-container">
+          <div class="user-trigger" (click)="toggleMenu()">
+            <div class="user-details">
+              <span class="username">{{ user.displayName }}</span>
+              <span class="role">{{ user.role }}</span>
+            </div>
+            <img [src]="user.avatar || 'assets/img/default-avatar.png'" class="avatar-img">
+          </div>
+
+          @if (isMenuOpen) {
+             <div class="dropdown-panel">
+  <div class="dropdown-info">
+    <strong>Sesión activa</strong>
+    <span>{{ user.displayName }}</span>
+  </div>
+
+  <a class="dropdown-item" routerLink="/mis-sistemas" (click)="closeMenu()">
+    <span class="icon">🖥️</span>
+    <span>Mis Sistemas</span>
+  </a>
+
+  <a class="dropdown-item" routerLink="/mis-descargas" (click)="closeMenu()">
+    <span class="icon">📥</span>
+    <span>Mis Descargas</span>
+  </a>
+
+  <button class="dropdown-item logout-btn" (click)="onLogout()">
+    <span class="icon">🚪</span>
+    <span>Cerrar Sesión</span>
+  </button>
+</div>
+          }
+        </div>
+      }
+    </div>
+
+  </div>
+</nav>

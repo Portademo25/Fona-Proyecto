@@ -1,0 +1,27 @@
+<div class="cap-container">
+  <section class="hero">
+    <div class="badge">Gestión del Conocimiento</div>
+    <h1>Dirección de <span class="highlight">Capacitación</span></h1>
+    <p>Impulsamos el desarrollo de capacidades técnicas y sociales para fortalecer la prevención y el servicio público de calidad.</p>
+  </section>
+
+  <div class="grid">
+    @for (item of servicios; track item.titulo) {
+      <div class="card">
+        <div class="card-header">
+          <span class="icon-box">{{ item.icono }}</span>
+          <h3>{{ item.titulo }}</h3>
+        </div>
+        <p class="description">{{ item.descripcion }}</p>
+        <div class="details">
+          <h4>Programas Académicos</h4>
+          <ul>
+            @for (detalle of item.items; track detalle) {
+              <li><span class="bullet">🛡️</span> {{ detalle }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>

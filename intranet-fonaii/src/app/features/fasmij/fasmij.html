@@ -1,0 +1,47 @@
+<div class="info-container">
+  <section class="hero-fasmij">
+    <div class="logo-circle">🏥</div>
+    <h1>¿Qué es <span class="highlight">FASMIJ</span>?</h1>
+    <p>Es el sistema de protección social encargado de garantizar la salud y el bienestar integral de los servidores públicos del sector justicia y paz.</p>
+  </section>
+
+  <div class="content-grid">
+    <div class="info-card">
+      <h2>Misión</h2>
+      <p>Brindar una respuesta oportuna y eficiente en materia de salud y previsión, asegurando que cada trabajador del FONA cuente con respaldo ante cualquier necesidad médica.</p>
+    </div>
+
+    <div class="info-card">
+      <h2>¿Cómo funciona?</h2>
+      <p>FASMIJ opera mediante convenios con clínicas y laboratorios, además de contar con unidades de atención primaria. Se financia a través de aportes institucionales para cubrir emergencias, cirugías y atención preventiva.</p>
+    </div>
+  </div>
+
+  <section class="pilares-section">
+    <h3>Nuestros Pilares de Protección</h3>
+    <div class="pilares-grid">
+      @for (pilar of pilares; track pilar.titulo) {
+        <div class="pilar-item">
+          <span class="pilar-icon">{{ pilar.icono }}</span>
+          <h4>{{ pilar.titulo }}</h4>
+          <p>{{ pilar.descripcion }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="pasos-section">
+    <h3>¿Cómo solicitar un servicio?</h3>
+    <div class="pasos-timeline">
+      @for (paso of pasos; track paso.n) {
+        <div class="paso-card">
+          <div class="paso-number">{{ paso.n }}</div>
+          <div class="paso-content">
+            <strong>{{ paso.accion }}</strong>
+            <p>{{ paso.detalle }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>

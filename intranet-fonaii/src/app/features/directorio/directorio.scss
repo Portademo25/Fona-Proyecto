@@ -1,0 +1,67 @@
+.directorio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    h1 { font-size: 2.2rem; color: #1e293b; .highlight { color: #0D8ABC; } }
+    p { color: #64748b; margin-top: -5px; }
+  }
+
+  .search-box {
+    margin-bottom: 2rem;
+    input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      border: 2px solid #e2e8f0;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      outline: none;
+      &:focus { border-color: #0D8ABC; }
+    }
+  }
+
+  .table-responsive {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+
+  .directorio-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    thead {
+      background: #f8fafc;
+      th { padding: 1.2rem; font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #f1f5f9;
+        &:last-child { border: none; }
+        &:hover { background: #fcfcfd; }
+      }
+
+      td { padding: 1.2rem; color: #334155; font-size: 0.95rem; }
+    }
+
+    .dir-name { font-weight: 600; color: #1e293b; }
+
+    .ext-badge {
+      background: rgba(13, 138, 188, 0.1);
+      color: #0D8ABC;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-family: 'Courier New', Courier, monospace; // Estilo de número
+    }
+
+    .no-results { text-align: center; padding: 3rem; color: #94a3b8; }
+  }
+}

@@ -1,0 +1,107 @@
+.systems-container {
+  padding: 40px 20px;
+  max-width: 1200px; // Evita que se vea feo en pantallas ultra anchas
+  margin: 0 auto;
+
+  .systems-header {
+    margin-bottom: 40px;
+    border-left: 4px solid #6366f1;
+    padding-left: 20px;
+
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      h1 { margin: 0; font-size: 28px; color: #1e293b; }
+      .main-icon { font-size: 32px; }
+    }
+    p { color: #64748b; margin-top: 5px; font-size: 15px; }
+  }
+}
+
+.systems-grid {
+  display: grid;
+  // Crea 3 columnas exactas, si hay más pasan abajo
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.system-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+
+    .icon-wrapper { background: #eef2ff; transform: scale(1.1); }
+    .card-footer { color: #6366f1; .arrow { transform: translateX(5px); } }
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    .icon-wrapper {
+      width: 50px;
+      height: 50px;
+      background: #f8fafc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981; // Punto verde de "Activo"
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+  }
+
+  .card-body {
+    flex-grow: 1;
+    h3 {
+      font-size: 18px;
+      color: #0f172a;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  .card-footer {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    transition: color 0.2s;
+
+    .arrow { transition: transform 0.2s; }
+  }
+}

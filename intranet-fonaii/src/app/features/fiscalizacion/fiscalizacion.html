@@ -1,0 +1,32 @@
+<div class="fisc-container">
+  <section class="hero-section">
+    <div class="fisc-badge">Control y Vigilancia</div>
+    <h1>Dirección de <span class="highlight">Fiscalización</span></h1>
+    <p>Garantizamos el cumplimiento fiel de la Ley Orgánica de Drogas mediante procesos de auditoría transparentes y objetivos.</p>
+  </section>
+
+  <div class="info-grid">
+    @for (item of procesosFiscal; track item.titulo) {
+      <div class="info-card">
+        <div class="card-top">
+          <span class="main-icon">{{ item.icono }}</span>
+          <h3>{{ item.titulo }}</h3>
+        </div>
+        <p class="description">{{ item.descripcion }}</p>
+        <div class="details-list">
+          @for (paso of item.pasos; track paso) {
+            <div class="detail-item">
+              <span class="check-icon">🛡️</span>
+              {{ paso }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="notice-box">
+    <span class="alert-icon">⚖️</span>
+    <p>Si desea reportar irregularidades o solicitar una revisión de su estatus fiscal, comuníquese a: <strong>fiscalizacion&#64;fona.gob.ve</strong></p>
+  </div>
+</div>

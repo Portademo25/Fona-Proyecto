@@ -1,0 +1,41 @@
+<div class="rrhh-info-container">
+  <section class="info-hero">
+    <div class="badge">Dirección Estratégica</div>
+    <h1>Dirección de <span class="highlight">Talento Humano</span></h1>
+    <p>Nuestra misión es garantizar el bienestar, desarrollo y cumplimiento de los derechos laborales de cada servidor público del FONA.</p>
+  </section>
+
+  <div class="areas-grid">
+    @for (area of areas; track area.titulo) {
+      <div class="area-card">
+        <div class="card-header">
+          <h3>{{ area.titulo }}</h3>
+        </div>
+        <div class="card-body">
+          <p class="desc">{{ area.descripcion }}</p>
+          <div class="tramites-list">
+            <h4>Gestiones Principales:</h4>
+            <ul>
+              @for (tramite of area.tramites; track tramite) {
+                <li><span class="dot"></span> {{ tramite }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    }
+    </div>
+
+    <section class="contact-box">
+      <div class="contact-info">
+        <h3>¿Necesitas atención personalizada?</h3>
+        <p>Nuestro equipo está disponible para asesorarte de lunes a viernes.</p>
+        <div class="details">
+          <span>🕒 Horario: 8:00 AM - 4:00 PM</span>
+          <span>📍 Edificio 407, Piso PB, Oficina 0-7</span>
+          <span>📧 Correo: rrhh&#64;fona.gob.ve</span>
+        </div>
+      </div>
+    </section>
+  </div>
+

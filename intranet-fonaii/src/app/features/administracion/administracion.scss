@@ -1,0 +1,31 @@
+.admin-container {
+  max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
+  $accent: #334155; // Color Gris Oxford
+
+  .hero {
+    text-align: center; margin-bottom: 5rem;
+    .badge { background: rgba($accent, 0.1); color: $accent; padding: 8px 20px; border-radius: 50px; display: inline-block; font-weight: 700; margin-bottom: 1.5rem; }
+    h1 { font-size: 3rem; color: #1e293b; .highlight { color: $accent; } }
+    p { color: #64748b; font-size: 1.2rem; max-width: 800px; margin: 1.5rem auto; }
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+
+  .card {
+    background: white; padding: 2.5rem; border-radius: 24px; border: 1px solid #e2e8f0; transition: 0.3s;
+    &:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: $accent; }
+    .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;
+      .icon-box { font-size: 2rem; }
+      h3 { color: #1e293b; margin: 0; font-size: 1.3rem; }
+    }
+    .description { color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; }
+    .details {
+      h4 { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 1rem; }
+      ul { list-style: none; padding: 0;
+        li { display: flex; align-items: center; gap: 10px; color: #334155; font-size: 0.9rem; margin-bottom: 10px;
+          .bullet { font-size: 0.8rem; opacity: 0.5; }
+        }
+      }
+    }
+  }
+}

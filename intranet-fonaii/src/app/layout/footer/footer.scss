@@ -1,0 +1,93 @@
+.footer {
+  background: #0f172a; // Azul noche muy profundo
+  color: #f8fafc;
+  padding: 4rem 2rem 1rem;
+  margin-top: 4rem;
+  font-family: 'Inter', sans-serif;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-section {
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      .highlight { color: #6366f1; }
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #94a3b8;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin-bottom: 0.8rem;
+        a {
+          color: #94a3b8;
+          text-decoration: none;
+          transition: 0.3s;
+          &:hover { color: #6366f1; padding-left: 5px; }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    p {
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+  }
+
+  .social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    i { font-size: 1.2rem; }
+
+    &:hover {
+      background: #6366f1; // Color principal del FONA en tu diseño
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+      border-color: #6366f1;
+    }
+  }
+}
+}

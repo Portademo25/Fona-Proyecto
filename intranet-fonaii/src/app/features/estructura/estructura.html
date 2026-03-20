@@ -1,0 +1,27 @@
+<div class="organigrama-page">
+  <header class="page-header">
+    <h1>ORGANIGRAMA <span class="highlight">ESTRUCTURAL</span></h1>
+    <p>FONDO NACIONAL ANTIDROGAS</p>
+  </header>
+
+  <div class="tree-container">
+    @for (nivel of organigrama; track nivel.rango) {
+      <section class="nivel-block">
+        <h2 class="nivel-title" [style.color]="nivel.color">{{ nivel.rango }}</h2>
+
+        <div class="unidades-grid">
+          @for (unidad of nivel.unidades; track unidad.nombre) {
+            <div class="unidad-card" [style.border-top-color]="nivel.color">
+              <span class="u-icon">{{ unidad.icono }}</span>
+              <span class="u-nombre">{{ unidad.nombre }}</span>
+            </div>
+          }
+        </div>
+      </section>
+
+      @if (!$last) {
+        <div class="connector-line"></div>
+      }
+    }
+  </div>
+</div>

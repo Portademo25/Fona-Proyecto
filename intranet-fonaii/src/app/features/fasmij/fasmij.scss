@@ -1,0 +1,53 @@
+.info-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  $accent: #0d9488;
+
+  .hero-fasmij {
+    text-align: center;
+    margin-bottom: 5rem;
+    .logo-circle { font-size: 3rem; background: rgba($accent, 0.1); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 1.5rem; }
+    h1 { font-size: 2.5rem; color: #1e293b; .highlight { color: $accent; } }
+    p { font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 1rem auto; }
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    .info-card { background: white; padding: 2rem; border-radius: 20px; border: 1px solid #e2e8f0; h2 { color: $accent; margin-bottom: 1rem; } p { color: #475569; line-height: 1.6; } }
+  }
+
+  .pilares-section {
+    text-align: center;
+    margin-bottom: 5rem;
+    h3 { font-size: 1.8rem; margin-bottom: 3rem; color: #1e293b; }
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      .pilar-item {
+        padding: 2rem; background: #f8fafc; border-radius: 24px;
+        .pilar-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+        h4 { color: #1e293b; margin-bottom: 0.5rem; }
+        p { font-size: 0.9rem; color: #64748b; }
+      }
+    }
+  }
+
+  .pasos-section {
+    h3 { text-align: center; margin-bottom: 3rem; }
+    .pasos-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      .paso-card {
+        background: white; padding: 1.5rem; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; gap: 15px; align-items: flex-start;
+        .paso-number { background: $accent; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; }
+        .paso-content { strong { display: block; color: #1e293b; margin-bottom: 5px; } p { font-size: 0.85rem; color: #64748b; margin: 0; } }
+      }
+    }
+  }
+}

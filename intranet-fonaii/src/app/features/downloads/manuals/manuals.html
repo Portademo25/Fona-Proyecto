@@ -1,0 +1,47 @@
+<div class="page-container">
+  <div class="breadcrumb">
+    <a routerLink="/mis-descargas">Centro de Documentación</a> / <span>Manuales</span>
+  </div>
+
+  <div class="header-section">
+    <div class="title-group">
+      <h1>📖 Manuales de Usuario</h1>
+      <p>Consulta las guías oficiales para el uso de los sistemas del FONA.</p>
+    </div>
+    <button class="btn-back" routerLink="/mis-descargas">Volver</button>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="manuals-table">
+      <thead>
+        <tr>
+          <th>Nombre del Documento</th>
+          <th>Versión</th>
+          <th>Fecha de Publicación</th>
+          <th>Tamaño</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (manual of manuals; track manual.id) {
+          <tr>
+            <td>
+              <div class="doc-cell">
+                <span class="pdf-icon">📕</span>
+                <span class="doc-title">{{ manual.title }}</span>
+              </div>
+            </td>
+            <td><span class="version-tag">{{ manual.version }}</span></td>
+            <td>{{ manual.date }}</td>
+            <td>{{ manual.size }}</td>
+            <td>
+              <button class="btn-action" (click)="downloadManual(manual)">
+                Descargar PDF
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

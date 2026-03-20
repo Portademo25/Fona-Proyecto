@@ -1,0 +1,102 @@
+.rrhh-info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.info-hero {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  .badge {
+    background: #eef2ff;
+    color: #6366f1;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #1e293b;
+    .highlight { color: #6366f1; }
+  }
+
+  p {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    color: #64748b;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.area-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+
+  .card-header {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    h3 { color: #1e293b; font-size: 1.4rem; }
+  }
+
+  .card-body {
+    padding: 2rem;
+    .desc { color: #475569; margin-bottom: 2rem; line-height: 1.6; }
+  }
+
+  .tramites-list {
+    h4 { font-size: 0.9rem; color: #1e293b; text-transform: uppercase; margin-bottom: 1rem; }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        color: #64748b;
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: center;
+        .dot {
+          width: 6px; height: 6px; background: #6366f1; border-radius: 50%; margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.contact-box {
+  margin-top: 5rem;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 30px;
+  text-align: center;
+
+  .details {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    color: #94a3b8;
+  }
+}

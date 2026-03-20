@@ -1,0 +1,32 @@
+<div class="recaudacion-container">
+  <section class="hero-section">
+    <div class="recaudacion-badge">Dirección de Recaudación</div>
+    <h1>Gestión de <span class="highlight">Aportes y Contribuciones</span></h1>
+    <p>Garantizamos la transparencia y eficiencia en la recaudación de fondos destinados a la prevención y lucha contra el tráfico ilícito de drogas.</p>
+  </section>
+
+  <div class="info-grid">
+    @for (item of serviciosRecaudacion; track item.titulo) {
+      <div class="info-card">
+        <div class="card-top">
+          <span class="main-icon">{{ item.icono }}</span>
+          <h3>{{ item.titulo }}</h3>
+        </div>
+        <p class="description">{{ item.descripcion }}</p>
+        <div class="details-list">
+          @for (detalle of item.detalles; track detalle) {
+            <div class="detail-item">
+              <span class="check-icon">🛡️</span>
+              {{ detalle }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="legal-notice">
+    <span class="alert-icon">⚠️</span>
+    <p>Recuerde que el incumplimiento en la declaración del aporte conlleva sanciones legales según lo establecido en la Ley Orgánica de Drogas.</p>
+  </div>
+</div>

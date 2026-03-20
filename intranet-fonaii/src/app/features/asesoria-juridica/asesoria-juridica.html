@@ -1,0 +1,27 @@
+<div class="juridica-container">
+  <section class="hero">
+    <div class="badge">Consultoría Legal</div>
+    <h1>Asesoría <span class="highlight">Jurídica</span></h1>
+    <p>Velamos por el cumplimiento estricto del marco legal vigente, garantizando la seguridad jurídica en cada actuación institucional.</p>
+  </section>
+
+  <div class="grid">
+    @for (item of servicios; track item.titulo) {
+      <div class="card">
+        <div class="card-header">
+          <span class="icon-box">{{ item.icono }}</span>
+          <h3>{{ item.titulo }}</h3>
+        </div>
+        <p class="description">{{ item.descripcion }}</p>
+        <div class="details">
+          <h4>Áreas de Acción</h4>
+          <ul>
+            @for (detalle of item.items; track detalle) {
+              <li><span class="bullet">🛡️</span> {{ detalle }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>

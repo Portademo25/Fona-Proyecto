@@ -1,0 +1,405 @@
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.8); // Efecto cristal
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 2rem;
+  font-family: 'Inter', sans-serif;
+
+  .nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  .logo-img-fona {
+    height: 50px; // Altura fija controlada
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+
+    .logo-text {
+      font-weight: 800;
+      color: #1e293b;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .logo-subtext {
+      font-size: 0.7rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+
+  a {
+    text-decoration: none;
+    color: #64748b;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(99, 102, 241, 0.05);
+      color: #6366f1;
+    }
+
+    &.active {
+      background: #6366f1;
+      color: white;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+    }
+  }
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .logo-min-nav {
+    height: 40px; // Un poco más pequeño que el principal
+    width: auto;
+    object-fit: contain;
+    padding-right: 15px;
+    border-right: 1px solid #e2e8f0;
+    display: block; // Asegura que se vea
+  }
+  .user-info {
+    text-align: right;
+    .username {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+    .role {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+  }
+
+  .user-avatar img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+  }
+}
+
+// navbar.scss
+
+.btn-login-link {
+  text-decoration: none; // Quita el subrayado de enlace
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #6366f1; // El color morado de tu plataforma
+  color: white !important;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2);
+
+  &:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Estilo para cuando ya estás en la ruta de login
+.active-link {
+  border: 2px solid #4f46e5;
+  background-color: white;
+  color: #4f46e5 !important;
+}
+
+.user-section {
+  position: relative; // Importante para que el menú se posicione respecto a esto
+}
+
+.user-info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%; // Lo baja un poco respecto al navbar
+  right: 0;
+  background: #ffffff;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border: 1px solid #eee;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  animation: slideIn 0.2s ease-out;
+
+  .dropdown-header {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    &.logout {
+      color: #e74c3c;
+      &:hover {
+        background: #fff5f5;
+      }
+    }
+  }
+
+  .dropdown-divider {
+    height: 1px;
+    background: #eee;
+    margin: 4px 0;
+  }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* navbar.component.scss */
+
+// Contenedor principal del perfil (el ancla)
+.user-profile-container {
+  position: relative; // <--- CRITICO: Para que el panel no flote por cualquier lado
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+// Lo que se ve siempre
+.user-trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    .username {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #333;
+      white-space: nowrap; // Evita que el nombre se parta en dos líneas
+    }
+
+    .role {
+      font-size: 0.75rem;
+      color: #666;
+    }
+  }
+
+  .avatar-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px; // Estilo cuadrado redondeado como el logo
+    object-fit: cover;
+  }
+}
+
+// El Panel que aparece al hacer clic (El que se ve mal en tu foto)
+.dropdown-panel {
+  position: absolute; // <--- CRITICO: Para que flote sobre el banner
+  top: 100%;          // Se coloca justo debajo del trigger
+  right: 0;           // Alineado a la derecha
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border: 1px solid #e2e8f0;
+  padding: 8px;
+  z-index: 9999;      // Asegura que esté por encima de todo
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  // Estilo para "Sesión activa"
+  .dropdown-info {
+    padding: 10px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 5px;
+
+    strong {
+      display: block;
+      font-size: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    span {
+      font-size: 13px;
+      color: #1e293b;
+      font-weight: 600;
+    }
+  }
+
+.dropdown-item {
+  /* Reset para botones y links */
+  appearance: none;
+  background: none;
+  border: none;
+  text-decoration: none;
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%; // Esto hará que el hover cubra todo el ancho
+  padding: 10px 16px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  /* Tipografía */
+  font-family: inherit;
+  font-size: 14px;
+  color: #475569;
+  text-align: left;
+
+  transition: all 0.2s ease;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #f1f5f9;
+    color: #6366f1;
+  }
+}
+
+.logout-btn {
+  margin-top: 5px;
+  border-radius: 0 0 8px 8px; // Redondeado solo abajo para encajar
+  padding-top: 12px;
+  color: #e11d48; // Rojo vibrante
+
+  &:hover {
+    background-color: #fff1f2 !important; // Fondo rosado suave
+    color: #be123c !important;
+  }
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .logo-img-fona {
+    height: 55px; // Ajusta según el alto de tu navbar
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1e293b;
+    display: block;
+  }
+
+  .logo-subtext {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .logo-min-nav {
+    height: 45px;
+    width: auto;
+    border-right: 1px solid #e2e8f0;
+    padding-right: 15px;
+    opacity: 0.9;
+  }
+}
+
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #e27474; // Color institucional
+  object-fit: cover;
+}
+}
+

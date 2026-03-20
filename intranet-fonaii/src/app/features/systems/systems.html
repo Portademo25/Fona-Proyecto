@@ -1,0 +1,32 @@
+<div class="systems-container">
+  <div class="systems-header">
+    <div class="title-wrapper">
+      <span class="main-icon">🖥️</span>
+      <h1>Mis Sistemas</h1>
+    </div>
+    <p>Plataformas operativas autorizadas para el personal del FONA.</p>
+  </div>
+
+  <div class="systems-grid">
+    @for (sys of systems; track sys.name) {
+      <div class="system-card" (click)="goToSystem(sys.url)">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            {{ sys.icon }}
+          </div>
+          <span class="status-dot"></span>
+        </div>
+
+        <div class="card-body">
+          <h3>{{ sys.name }}</h3>
+          <p>{{ sys.description }}</p>
+        </div>
+
+        <div class="card-footer">
+          <span>Abrir sistema</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="plan-container">
+  <section class="hero">
+    <div class="badge">Estrategia y Control</div>
+    <h1>Planificación y <span class="highlight">Presupuesto</span></h1>
+    <p>Diseñamos el futuro institucional mediante la asignación eficiente de recursos y el seguimiento de objetivos estratégicos.</p>
+  </section>
+
+  <div class="grid">
+    @for (item of servicios; track item.titulo) {
+      <div class="card">
+        <div class="card-header">
+          <span class="icon-box">{{ item.icono }}</span>
+          <h3>{{ item.titulo }}</h3>
+        </div>
+        <p class="description">{{ item.descripcion }}</p>
+        <div class="details">
+          <h4>Ejes Estratégicos</h4>
+          <ul>
+            @for (detalle of item.items; track detalle) {
+              <li><span class="bullet">🛡️</span> {{ detalle }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>

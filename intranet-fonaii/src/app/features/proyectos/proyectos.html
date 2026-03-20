@@ -1,0 +1,28 @@
+
+<div class="proy-container">
+  <section class="hero">
+    <div class="badge">Gestión de Obras</div>
+    <h1>Dirección de <span class="highlight">Proyectos</span></h1>
+    <p>Transformamos los recursos en realidades tangibles para el beneficio de las comunidades y la prevención integral.</p>
+  </section>
+
+  <div class="grid">
+    @for (item of servicios; track item.titulo) {
+      <div class="card">
+        <div class="card-header">
+          <span class="icon-box">{{ item.icono }}</span>
+          <h3>{{ item.titulo }}</h3>
+        </div>
+        <p class="description">{{ item.descripcion }}</p>
+        <div class="details">
+          <h4>Ejes de Ejecución</h4>
+          <ul>
+            @for (detalle of item.items; track detalle) {
+              <li><span class="bullet">🛡️</span> {{ detalle }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="directorio-container">
+  <header class="header">
+    <h1>Directorio <span class="highlight">Telefónico</span></h1>
+    <p>Extensiones internas y ubicación por departamentos</p>
+  </header>
+
+  <div class="search-box">
+    <input
+      type="text"
+      [(ngModel)]="filtro"
+      placeholder="Buscar por dirección, unidad o extensión..."
+    >
+  </div>
+
+  <div class="table-responsive">
+    <table class="directorio-table">
+      <thead>
+        <tr>
+          <th>Dirección / Oficina</th>
+          <th>Unidad Específica</th>
+          <th>Extensión</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of contactosFiltrados; track item.extension) {
+          <tr>
+            <td class="dir-name">{{ item.direccion }}</td>
+            <td>{{ item.unidad }}</td>
+            <td><span class="ext-badge">{{ item.extension }}</span></td>
+
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4" class="no-results">No se encontraron coincidencias.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

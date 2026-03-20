@@ -1,0 +1,32 @@
+<div class="tec-container">
+  <section class="tec-hero">
+    <div class="badge">Dirección de Apoyo</div>
+    <h1>Oficina de <span class="highlight">Tecnología y Sistemas</span></h1>
+    <p>Innovamos y garantizamos la continuidad operativa de los servicios digitales del FONA.</p>
+  </section>
+
+  <div class="services-grid">
+    @for (servicio of serviciosTecnicos; track servicio.titulo) {
+      <div class="tec-card">
+        <div class="icon-header">{{ servicio.icono }}</div>
+        <h3>{{ servicio.titulo }}</h3>
+        <p>{{ servicio.descripcion }}</p>
+        <ul class="check-list">
+          @for (item of servicio.items; track item) {
+            <li><span>✔</span> {{ item }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <section class="support-banner">
+    <div class="banner-content">
+      <div class="text">
+        <h3>¿Tienes una incidencia técnica?</h3>
+        <p>Reporta cualquier falla a través de nuestra extensión de soporte rápido.</p>
+      </div>
+      <div class="contact-pill">Extensión: 8190</div>
+    </div>
+  </section>
+</div>

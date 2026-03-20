@@ -1,0 +1,72 @@
+.organigrama-page {
+  padding: 3rem 1rem;
+  background-color: #fdfdfd;
+  min-height: 100vh;
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; color: #1a1a1a; }
+    p { color: #555; font-size: 1.1rem; font-weight: 500; margin-top: -10px; }
+    .highlight { color: #e27474; }
+  }
+
+  .tree-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nivel-block {
+    width: 100%;
+    .nivel-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  .unidades-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .unidad-card {
+    background: white;
+    width: 260px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid; // Color dinámico desde el TS
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+
+    &:hover { transform: translateY(-5px); }
+
+    .u-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .u-nombre {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+  }
+
+  .connector-line {
+    width: 2px;
+    height: 40px;
+    background: #ccc;
+    margin: 1.5rem 0;
+  }
+}
